@@ -1,0 +1,25 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+DerivedData/
+*.xcarchive/
+*.xcuserstate
+xcuserdata/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Generated app and release artifacts
+*.app/
+*.dmg
+*.zip
+*.tar.gz
+*.iconset/
+
+# Ad hoc generated image exports
+ChatGPT Image*.png

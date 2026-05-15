@@ -56,16 +56,6 @@ scripts/package-dmg.sh
 open .build/Napkin.dmg
 ```
 
-## GitHub README Images
-
-GitHub renders local images with normal Markdown. This README embeds the screenshot with:
-
-```md
-![Napkin screenshot](screenshot.png)
-```
-
-Keep `screenshot.png` committed at the repository root and GitHub will display it near the top of the page.
-
 ## Status
 
 Napkin is early software. It is intentionally small, local-only, and focused on the drawing loop.

@@ -2,7 +2,7 @@
 
 ![Napkin screenshot](screenshot.png)
 
-Napkin is a tiny macOS whiteboard for quick thinking, sketching, and ink-first notes. It gives you a large canvas, simple pen colors, an eraser, undo/redo, clear with undo, image export, and pen-tablet-friendly omnidirectional scrolling.
+Napkin is a tiny macOS whiteboard for quick thinking, sketching, and ink-first notes. It gives you a large canvas, simple pen colors, an eraser, undo/redo, clear with undo, image export, Apple Sidecar support, and pen-tablet-friendly omnidirectional scrolling.
 
 ## Download
 
@@ -26,6 +26,7 @@ You can also right-click `Napkin.app`, choose `Open`, then confirm you want to o
 - Eraser with cursor preview.
 - Undo and redo, including undoing Clear.
 - Export the visible canvas or the full drawn area as PNG.
+- Works with Apple Sidecar for sketching from an iPad.
 - Hold right click or middle click and hover away from the starting point to continuously scroll.
 
 ## Build From Source

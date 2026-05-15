@@ -8,7 +8,7 @@ Napkin is a tiny macOS whiteboard for quick thinking, sketching, and ink-first n
 
 Download the latest `Napkin.dmg` from the Releases page, open it, and drag `Napkin.app` into `Applications`.
 
-Napkin is currently unsigned. The first time you open it, macOS may block it because it cannot verify the developer. If that happens:
+Local builds are ad-hoc signed. The first time you open one, macOS may block it because it cannot verify the developer. If that happens:
 
 1. Open `System Settings`.
 2. Go to `Privacy & Security`.
@@ -56,6 +56,16 @@ Build a release `.dmg`:
 scripts/package-dmg.sh
 open .build/Napkin.dmg
 ```
+
+Build a distributable, notarized release `.dmg`:
+
+```sh
+CODESIGN_IDENTITY="Developer ID Application: Your Name (TEAMID)" \
+NOTARYTOOL_PROFILE="napkin-notary" \
+scripts/package-dmg.sh
+```
+
+You can also provide notarization credentials directly with `APPLE_ID`, `APPLE_TEAM_ID`, and `APPLE_APP_PASSWORD`.
 
 ## Status
 

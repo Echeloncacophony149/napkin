@@ -11,6 +11,7 @@ LOGO_SOURCE="logo.png"
 ICON_NAME="AppIcon"
 ICON_FILE="${ICON_NAME}.icns"
 ICONSET_DIR=".build/${ICON_NAME}.iconset"
+CODESIGN_IDENTITY="${CODESIGN_IDENTITY:--}"
 
 swift build -c release
 
@@ -71,7 +72,7 @@ cat > "${CONTENTS_DIR}/Info.plist" <<PLIST
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>
-  <string>0.1.0</string>
+  <string>0.1.1</string>
   <key>CFBundleVersion</key>
   <string>1</string>
   <key>NSHumanReadableCopyright</key>
@@ -83,5 +84,15 @@ cat > "${CONTENTS_DIR}/Info.plist" <<PLIST
 </dict>
 </plist>
 PLIST
+
+xattr -cr "${APP_DIR}"
+codesign_args=(--force --deep --sign "${CODESIGN_IDENTITY}")
+
+if [[ "${CODESIGN_IDENTITY}" != "-" ]]; then
+  codesign_args+=(--timestamp --options runtime)
+fi
+
+codesign "${codesign_args[@]}" "${APP_DIR}"
+codesign --verify --deep --strict --verbose=2 "${APP_DIR}"
 
 echo "Built ${APP_DIR}"
